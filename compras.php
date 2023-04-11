@@ -40,7 +40,7 @@
         <td>", number_format($compras->valor), "</td>
         <td>", $compras->empresa, "</td>
 
-        <td><a href='model/editarCompras.php?id=", $compras->id, "'title='Editar'>
+        <td><a href='model/editarcompras_.php?id=", $compras->id, "'title='Editar'>
           <img src='' alt='editar'>
         </a>
         <a href='model/eliminarCompras.php?id=", $compras->id, "' title='Deletar'>

@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
     $fetch = $query->fetch();
 
     if ($row > 0) {
-      header("location: /login/home.php");
+      echo "<script>window.location='/gerenciamento-de-loja/home.php'</script>";
     } else {
       echo "<script>alert('Infelizmente não esta cadastrado na nossa base de dados!')</script>
       <script>window.location='/login/index.php'</script>
