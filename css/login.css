@@ -1,0 +1,29 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+html,body{
+  --black:hsl(230,7%,13%);
+  --gray:hsl(230,9%,89%);
+  height: 100%;
+
+}
+body{
+  display: grid;
+  place-items: center;
+}
+form{
+  width: 54%;
+  height: 50%;
+  border: 1px solid black;
+  text-align: center;
+}
+input{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*display: block;*/
+  width: 50%;
+  padding: 20px;
+  margin-top: 20px;
+}
