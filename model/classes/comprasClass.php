@@ -1,54 +1,51 @@
 <?php
-class compras
+class compra
 {
   private $codNome;
-  private $quantidade;
-  private $empresa;
-  private $valor;
   private $data;
+  private $quantidade;
+  private $valor;
+  private $empresa;
 
-
-  ////////////////////////-----Get-----////////////
   function getCodNome()
   {
     return $this->codNome;
-  }
-  function getQuantudade()
-  {
-    return $this->quantidade;
-  }
-  function getEmpresa()
-  {
-    return $this->empresa;
-  }
-  function getValor()
-  {
-    return $this->valor;
   }
   function getData()
   {
     return $this->data;
   }
+  function getQuantidade()
+  {
+    return $this->quantidade;
+  }
+  function getValor()
+  {
+    return $this->valor;
+  }
+  function getEmpresa()
+  {
+    return $this->empresa;
+  }
 
-  /////////////////sett////////////////////
   function setCodNome($codNome)
   {
     $this->codNome = $codNome;
+  }
+  function setData($data)
+  {
+    $this->data = $data;
   }
   function setQuantidade($quantidade)
   {
     $this->quantidade = $quantidade;
   }
-  function setEmpresa($empresa)
-  {
-    $this->empresa = $empresa;
-  }
   function setValor($valor)
   {
     $this->valor = $valor;
   }
-  function setData($data)
+  function setEmpresa($empresa)
   {
-    $this->data = $data;
+    $this->empresa = $empresa;
   }
 }

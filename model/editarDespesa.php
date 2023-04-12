@@ -5,7 +5,6 @@ include_once("DAO/despesaDao.php");
 
 $id = $_GET['id'];
 
-
 $c = new conexao();
 $conn = $c->conetado();
 

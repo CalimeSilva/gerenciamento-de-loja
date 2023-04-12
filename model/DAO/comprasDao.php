@@ -22,32 +22,34 @@ class compras_Dao
       return false;
     }
   }
-  public function editar_Compras_info($id, $conexao)
+  public function editar_Compras_info_($id, $conexao)
   {
     try {
-      $stmt = $conexao->prepare("SELECT * FROM compras WHERE id = '$id'")->fetchAll(PDO::FETCH_OBJ);
+      $stmt = $conexao->query("SELECT * FROM compras WHERE id = '$id'")->fetchAll(PDO::FETCH_OBJ);
 
       return $stmt;
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
   }
-  public function editarDados($id, $despesa, $conexao)
+  public function editarDados($id, $compras, $conexao)
   {
     include("C:/wamp64/www/login/model/classes/comprasClass.php");
     try {
-      $stmt = $conexao->prepare("UPDATE compras SET cod=?, data=?, quantidade=?, valor=?, empresa=?");
+      $stmt = $conexao->prepare("UPDATE compras SET cod=?, data=?, quantidade=?, valor=?, empresa=? WHERE id=?");
 
       $stmt->bindValue(1, $compras->getCodNome());
       $stmt->bindValue(2, $compras->getData());
       $stmt->bindValue(3, $compras->getQuantidade());
       $stmt->bindValue(4, $compras->getValor());
-      $stmt->bindValue(5, $compras->getEmprego());
+      $stmt->bindValue(5, $compras->getEmpresa());
+      $stmt->bindValue(6, $id);
 
       $stmt->execute();
       return true;
     } catch (PDOException $e) {
       echo $e->getMessage();
+
       return false;
     }
   }
