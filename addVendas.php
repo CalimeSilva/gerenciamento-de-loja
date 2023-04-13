@@ -11,8 +11,6 @@ if (isset($_POST['cod'], $_POST['data'], $_POST['qnt'], $_POST['valor'], $_POST[
   $e->setCodNome($_POST['cod']);
   $e->setData($_POST['data']);
   $e->setQuantidade($_POST['qnt']);
-  $e->setValor($_POST['valor']);
-  $e->setEmpresa($_POST['empresa']);
 
   $inserir = new compras_Dao();
   $inserirDados = $inserir->inserirDados($e, $conn);
