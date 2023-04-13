@@ -4,12 +4,13 @@ class Vendas_Dao
   public function inserir_Dados($vendas, $conexao)
   {
     try {
-      include_once("../classes/vendasClass.php");
-      $stmt = $conexao->prepare("INSERT INTO venda(data, valor) VALUES (:data, :valor)");
-      $stmt->bindValue(":data", $vendas->getDate());
+      include_once("C:/wamp64/www/gerenciamento-de-loja/model/classes/vendasClass.php");
+      $stmt = $conexao->prepare("INSERT INTO vendas(data, valor) VALUES (:data, :valor)");
+      $stmt->bindValue(":data", $vendas->getData());
       $stmt->bindValue(":valor", $vendas->getValor());
 
       $stmt->execute();
+
       return true;
     } catch (PDOException $e) {
       echo $e->getMessage();
